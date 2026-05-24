@@ -1,473 +1,116 @@
-[index_1.html](https://github.com/user-attachments/files/28189172/index_1.html)
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sainaba Hanan — Data Analyst</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --ink: #1a1814;
-    --ink-light: #4a4640;
-    --ink-muted: #8a8480;
-    --cream: #f8f5f0;
-    --cream-dark: #ede9e2;
-    --gold: #c4a96b;
-    --gold-light: #e8d5a8;
-    --white: #ffffff;
-    --serif: 'Cormorant Garamond', Georgia, serif;
-    --sans: 'DM Sans', system-ui, sans-serif;
-  }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body { font-family: var(--sans); background: var(--cream); color: var(--ink); line-height: 1.7; overflow-x: hidden; }
+# Hi, I'm Sainaba Hanan 👋
 
-  /* NAV */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 1.25rem 4rem;
-    background: rgba(248,245,240,0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--cream-dark);
-  }
-  .nav-logo { font-family: var(--serif); font-size: 1.25rem; font-weight: 400; color: var(--ink); text-decoration: none; }
-  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-  .nav-links a { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-light); text-decoration: none; transition: color 0.2s; }
-  .nav-links a:hover { color: var(--gold); }
+**Data Analyst** · MSc Data Science · Kozhikode, Kerala, India
 
-  /* HERO */
-  .hero {
-    min-height: 100vh;
-    display: grid; grid-template-columns: 1fr 1fr;
-    align-items: center;
-    padding: 6rem 4rem 0;
-    gap: 4rem;
-  }
-  .hero-text { max-width: 540px; }
-  .hero-eyebrow { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 1.25rem; opacity: 0; animation: fadeUp 0.8s 0.1s forwards; }
-  .hero-name { font-family: var(--serif); font-size: clamp(3.5rem, 6vw, 5.5rem); font-weight: 300; line-height: 1.05; color: var(--ink); margin-bottom: 1.5rem; opacity: 0; animation: fadeUp 0.8s 0.2s forwards; }
-  .hero-desc { font-size: 1rem; color: var(--ink-light); line-height: 1.8; margin-bottom: 2.5rem; max-width: 440px; font-weight: 300; opacity: 0; animation: fadeUp 0.8s 0.35s forwards; }
-  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.8s 0.5s forwards; }
-  .btn-primary { display: inline-block; padding: 0.85rem 2rem; background: var(--ink); color: var(--cream); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; transition: background 0.2s, transform 0.2s; }
-  .btn-primary:hover { background: var(--gold); transform: translateY(-1px); }
-  .btn-outline { display: inline-block; padding: 0.85rem 2rem; border: 1px solid var(--ink-muted); color: var(--ink); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 400; transition: border-color 0.2s, color 0.2s, transform 0.2s; }
-  .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-1px); }
+I turn raw datasets into decisions — with Python, SQL, Tableau, Looker Studio, Power BI, and machine learning.
 
-  .hero-visual { display: flex; flex-direction: column; gap: 1rem; opacity: 0; animation: fadeIn 1s 0.6s forwards; }
-  .stat-card { background: var(--white); border: 1px solid var(--cream-dark); padding: 1.25rem 1.5rem; display: flex; align-items: center; gap: 1.25rem; }
-  .stat-num { font-family: var(--serif); font-size: 2.2rem; font-weight: 300; color: var(--gold); line-height: 1; min-width: 64px; }
-  .stat-label { font-size: 0.78rem; color: var(--ink-light); line-height: 1.5; }
-  .stat-label strong { display: block; color: var(--ink); font-weight: 500; font-size: 0.85rem; margin-bottom: 2px; }
+🌐 **Portfolio:** [sainaba-hanan.github.io](https://sainaba-hanan.github.io)  
+📊 **RetailPulse Dashboard:** [View Live](https://datastudio.google.com/s/seVfHvrr1bI)  
+📈 **Marketing Analytics Dashboard:** [View on Tableau Public](https://public.tableau.com/views/MARKETINGANALYTICS_17795961780410/Dashboard5)
 
-  /* SECTIONS */
-  section { padding: 6rem 4rem; }
-  .section-header { margin-bottom: 3.5rem; }
-  .section-tag { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 0.75rem; }
-  .section-title { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; color: var(--ink); line-height: 1.15; }
-  .divider { width: 48px; height: 1px; background: var(--gold); margin: 1.25rem 0; }
+---
 
-  /* SKILLS */
-  #skills { background: var(--ink); color: var(--cream); }
-  #skills .section-title { color: var(--cream); }
-  #skills .section-tag { color: var(--gold-light); }
-  #skills .divider { background: var(--gold-light); }
-  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; }
-  .skill-group h3 { font-family: var(--serif); font-size: 1.25rem; font-weight: 400; color: var(--gold-light); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(196,169,107,0.3); }
-  .skill-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-  .skill-list li { font-size: 0.85rem; color: rgba(248,245,240,0.75); display: flex; align-items: center; gap: 0.5rem; }
-  .skill-list li::before { content: ''; width: 4px; height: 4px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
+## 🛠 Technical Skills
 
-  /* PROJECTS */
-  #projects { background: var(--cream); }
-  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
-  .project-card { background: var(--white); border: 1px solid var(--cream-dark); padding: 2rem; transition: transform 0.25s, box-shadow 0.25s; position: relative; overflow: hidden; display: flex; flex-direction: column; }
-  .project-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
-  .project-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(26,24,20,0.08); }
-  .project-card:hover::before { transform: scaleX(1); }
-  .project-year { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; font-weight: 500; }
-  .project-name { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; color: var(--ink); margin-bottom: 0.75rem; line-height: 1.25; }
-  .project-desc { font-size: 0.85rem; color: var(--ink-light); line-height: 1.7; margin-bottom: 1.25rem; }
-  .project-highlights { list-style: none; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.4rem; flex: 1; }
-  .project-highlights li { font-size: 0.78rem; color: var(--ink-light); padding-left: 1rem; position: relative; line-height: 1.6; }
-  .project-highlights li::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
-  .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
-  .project-tag { font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.25rem 0.6rem; border: 1px solid var(--cream-dark); color: var(--ink-muted); }
-  .project-links { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: auto; }
-  .project-link { display: inline-block; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold-light); padding-bottom: 1px; transition: color 0.2s, border-color 0.2s; }
-  .project-link:hover { color: var(--ink); border-color: var(--ink); }
+**Languages & Query** &nbsp;·&nbsp; `Python` `R` `SQL`
 
-  /* EXPERIENCE */
-  #experience { background: var(--cream-dark); }
-  .exp-list { display: flex; flex-direction: column; gap: 2.5rem; max-width: 760px; }
-  .exp-item { display: grid; grid-template-columns: 140px 1fr; gap: 2rem; }
-  .exp-period { font-size: 0.75rem; letter-spacing: 0.05em; color: var(--ink-muted); padding-top: 0.15rem; line-height: 1.5; }
-  .exp-content h3 { font-family: var(--serif); font-size: 1.3rem; font-weight: 400; color: var(--ink); margin-bottom: 0.2rem; }
-  .exp-company { font-size: 0.78rem; color: var(--gold); font-weight: 500; letter-spacing: 0.05em; margin-bottom: 0.75rem; }
-  .exp-points { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
-  .exp-points li { font-size: 0.85rem; color: var(--ink-light); padding-left: 1rem; position: relative; line-height: 1.6; }
-  .exp-points li::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
+**ML & Analytics** &nbsp;·&nbsp; `Scikit-learn` `Logistic Regression` `Random Forest` `KNN` `SMOTE` `EDA` `Feature Engineering`
 
-  /* EDUCATION */
-  #education { background: var(--cream); }
-  .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
-  .edu-item { margin-bottom: 2rem; }
-  .edu-degree { font-family: var(--serif); font-size: 1.35rem; font-weight: 400; color: var(--ink); margin-bottom: 0.25rem; }
-  .edu-school { font-size: 0.82rem; color: var(--gold); font-weight: 500; margin-bottom: 0.25rem; }
-  .edu-year { font-size: 0.78rem; color: var(--ink-muted); }
-  .cert-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
-  .cert-item { display: flex; align-items: flex-start; gap: 0.75rem; }
-  .cert-dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; margin-top: 0.45rem; flex-shrink: 0; }
-  .cert-name { font-size: 0.85rem; color: var(--ink); font-weight: 500; }
-  .cert-org { font-size: 0.75rem; color: var(--ink-muted); }
+**Visualisation** &nbsp;·&nbsp; `Tableau` `Looker Studio` `Power BI` `Advanced Excel` `Matplotlib` `Seaborn`
 
-  /* CONTACT */
-  #contact { background: var(--ink); color: var(--cream); text-align: center; padding: 6rem 4rem; }
-  #contact .section-title { color: var(--cream); }
-  #contact .section-tag { color: var(--gold-light); }
-  #contact .divider { background: var(--gold-light); margin: 1.25rem auto; }
-  .contact-subtitle { font-size: 1rem; color: rgba(248,245,240,0.6); max-width: 480px; margin: 0 auto 2.5rem; font-weight: 300; }
-  .contact-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
-  .contact-link { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 1.75rem; border: 1px solid rgba(248,245,240,0.2); color: var(--cream); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; transition: border-color 0.2s, color 0.2s; }
-  .contact-link:hover { border-color: var(--gold); color: var(--gold); }
+**Tools** &nbsp;·&nbsp; `MySQL` `MySQL Workbench` `MS Excel` `Tally` `MS PowerPoint` `AWS (beginner)`
 
-  footer { background: var(--ink); border-top: 1px solid rgba(248,245,240,0.08); padding: 1.5rem 4rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.72rem; color: rgba(248,245,240,0.3); letter-spacing: 0.05em; }
+---
 
-  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s, transform 0.7s; }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
+## 📂 Featured Projects
 
-  @media (max-width: 900px) {
-    nav { padding: 1rem 1.5rem; }
-    .nav-links { gap: 1.5rem; }
-    .hero { grid-template-columns: 1fr; padding: 6rem 1.5rem 0; }
-    .hero-visual { display: none; }
-    section { padding: 4rem 1.5rem; }
-    .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
-    .edu-grid { grid-template-columns: 1fr; gap: 2rem; }
-    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
-  }
-  @media (max-width: 600px) {
-    .nav-links { display: none; }
-    .hero-name { font-size: 3rem; }
-    .contact-links { flex-direction: column; align-items: center; }
-  }
-</style>
-</head>
-<body>
+### 🔹 RetailPulse — E-Commerce Sales Analytics
+> MySQL · SQL · Looker Studio · 2025–2026
 
-<nav>
-  <a href="#" class="nav-logo">Sainaba Hanan</a>
-  <ul class="nav-links">
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+- Designed **5-table MySQL database** and wrote **15 SQL queries** across revenue, customer LTV, category margins, and return rates
+- Identified **Beauty as highest-margin category (51.6%)** and UPI as dominant payment method (36%)
+- Built **4-page Looker Studio dashboard** — returns stabilised in 2025 despite 30% order volume growth
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-text">
-    <p class="hero-eyebrow">Data Analyst &nbsp;·&nbsp; Kerala, India</p>
-    <h1 class="hero-name">Sainaba Hanan</h1>
-    <p class="hero-desc">MSc Data Science graduate with hands-on expertise in Python, SQL, machine learning, and business intelligence. I turn complex datasets into clear decisions that drive real business outcomes.</p>
-    <div class="hero-ctas">
-      <a href="#projects" class="btn-primary">View Projects</a>
-      <a href="mailto:sainabahanan123@gmail.com" class="btn-outline">Get in Touch</a>
-    </div>
-  </div>
-  <div class="hero-visual">
-    <div class="stat-card">
-      <div class="stat-num">5</div>
-      <div class="stat-label"><strong>Projects Delivered</strong>SQL · Tableau · Power BI · Excel · Machine Learning</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-num">78.9%</div>
-      <div class="stat-label"><strong>ML Model Accuracy</strong>Loan prediction — top performer across 3 algorithms</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-num">11K+</div>
-      <div class="stat-label"><strong>Customers Analysed</strong>Shopping behaviour study with interactive Excel dashboard</div>
-    </div>
-  </div>
-</section>
+🔗 [Live Dashboard](https://datastudio.google.com/s/seVfHvrr1bI) &nbsp;·&nbsp; [SQL Code](https://github.com/sainaba-hanan/retailpulse-ecommerce-analytics)
 
-<!-- SKILLS -->
-<section id="skills">
-  <div class="section-header">
-    <p class="section-tag">Technical Proficiency</p>
-    <h2 class="section-title">Skills & Tools</h2>
-    <div class="divider"></div>
-  </div>
-  <div class="skills-grid reveal">
-    <div class="skill-group">
-      <h3>Languages & Query</h3>
-      <ul class="skill-list">
-        <li>Python (Pandas, NumPy, Scikit-learn)</li>
-        <li>Python (Matplotlib, Seaborn)</li>
-        <li>R — statistical computing</li>
-        <li>SQL — data extraction & analysis</li>
-      </ul>
-    </div>
-    <div class="skill-group">
-      <h3>Machine Learning</h3>
-      <ul class="skill-list">
-        <li>Logistic Regression</li>
-        <li>Random Forest, KNN</li>
-        <li>SMOTE — class imbalance handling</li>
-        <li>Feature Engineering & Encoding</li>
-        <li>EDA & Preprocessing</li>
-      </ul>
-    </div>
-    <div class="skill-group">
-      <h3>Visualisation</h3>
-      <ul class="skill-list">
-        <li>Looker Studio — interactive dashboards</li>
-        <li>Tableau — storytelling & LOD expressions</li>
-        <li>Power BI & Advanced Excel</li>
-        <li>Matplotlib / Seaborn</li>
-      </ul>
-    </div>
-    <div class="skill-group">
-      <h3>Tools & Platforms</h3>
-      <ul class="skill-list">
-        <li>MySQL & MySQL Workbench</li>
-        <li>MS Excel & PowerPoint</li>
-        <li>Tally — financial records</li>
-        <li>AWS (beginner)</li>
-      </ul>
-    </div>
-  </div>
-</section>
+---
 
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="section-header reveal">
-    <p class="section-tag">Portfolio</p>
-    <h2 class="section-title">Featured Projects</h2>
-    <div class="divider"></div>
-  </div>
-  <div class="projects-grid">
+### 🔹 Marketing Analysis Dashboard
+> Tableau · Excel · May 2025
 
-    <!-- PROJECT 1: RetailPulse -->
-    <div class="project-card reveal">
-      <p class="project-year">2025–2026 &nbsp;·&nbsp; SQL · Looker Studio</p>
-      <h3 class="project-name">RetailPulse — E-Commerce Analytics</h3>
-      <p class="project-desc">End-to-end analytics on a simulated Indian e-commerce dataset — from database design to a published interactive dashboard.</p>
-      <ul class="project-highlights">
-        <li>Designed 5-table MySQL database and wrote 15 SQL queries across revenue, customer LTV, category margins, and return rates</li>
-        <li>Identified Beauty as highest-margin category (51.6%) and UPI as dominant payment method (36%)</li>
-        <li>Built 4-page Looker Studio dashboard — returns stabilised in 2025 despite 30% order volume growth</li>
-      </ul>
-      <div class="project-tags">
-        <span class="project-tag">MySQL</span>
-        <span class="project-tag">SQL</span>
-        <span class="project-tag">Looker Studio</span>
-        <span class="project-tag">Data Visualisation</span>
-      </div>
-      <div class="project-links"></div>
-    </div>
+- Designed **4-slide interactive Tableau story** analysing ₹10.42L revenue across products, channels, and regions using ROI, CPA, CTR, and Conversion Rate KPIs
+- Identified **Product C as top performer** (33% revenue share, ROI 155.85) and flagged **₹1.5–2L recoverable efficiency** through channel reallocation
+- Corrected critical aggregation error inflating Avg. CPA by **92% (₹198 → ₹103)** using Tableau LOD expressions
 
-    <!-- PROJECT 2: Marketing Analytics -->
-    <div class="project-card reveal">
-      <p class="project-year">May 2025 &nbsp;·&nbsp; Tableau</p>
-      <h3 class="project-name">Marketing Analysis Dashboard</h3>
-      <p class="project-desc">Interactive 4-slide Tableau story analysing ₹10.42L in marketing revenue across products, channels, and regions using business KPIs.</p>
-      <ul class="project-highlights">
-        <li>Analysed ROI, CPA, CTR, and Conversion Rate across channels — Product C identified as top performer with 33% revenue share and ROI of 155.85</li>
-        <li>Flagged ₹1.5–2L recoverable efficiency through channel reallocation and Q4 budget optimisation</li>
-        <li>Corrected critical aggregation error inflating Avg. CPA by 92% (₹198 → ₹103) using Tableau LOD expressions</li>
-      </ul>
-      <div class="project-tags">
-        <span class="project-tag">Tableau</span>
-        <span class="project-tag">Excel</span>
-        <span class="project-tag">Marketing Analytics</span>
-        <span class="project-tag">LOD Expressions</span>
-      </div>
-      <div class="project-links">
-        <a href="https://public.tableau.com/views/MARKETINGANALYTICS_17795961780410/Dashboard5" class="project-link" target="_blank">View Tableau Dashboard →</a>
-      </div>
-    </div>
+🔗 [View Tableau Dashboard](https://public.tableau.com/views/MARKETINGANALYTICS_17795961780410/Dashboard5)
 
-    <!-- PROJECT 3: Loan Prediction -->
-    <div class="project-card reveal">
-      <p class="project-year">2026 &nbsp;·&nbsp; Machine Learning</p>
-      <h3 class="project-name">Loan Prediction — Binary Classification</h3>
-      <p class="project-desc">End-to-end ML pipeline to predict loan approval using a real-world Kaggle dataset with class imbalance challenges.</p>
-      <ul class="project-highlights">
-        <li>78.9% accuracy — Logistic Regression top performer across 3 models (Random Forest, KNN)</li>
-        <li>Applied SMOTE to resolve class imbalance — improved minority-class recall by ~15%</li>
-        <li>Credit history identified as the strongest approval predictor through feature analysis</li>
-      </ul>
-      <div class="project-tags">
-        <span class="project-tag">Python</span>
-        <span class="project-tag">Scikit-learn</span>
-        <span class="project-tag">SMOTE</span>
-        <span class="project-tag">Pandas</span>
-        <span class="project-tag">Kaggle</span>
-      </div>
-      <div class="project-links"></div>
-    </div>
+---
 
-    <!-- PROJECT 4: Shopping Behaviour -->
-    <div class="project-card reveal">
-      <p class="project-year">2025–2026 &nbsp;·&nbsp; Excel Dashboard</p>
-      <h3 class="project-name">Online vs Offline Shopping Behaviour</h3>
-      <p class="project-desc">Consumer analytics study across 11,789+ customers with an interactive dashboard surfacing regional and demographic patterns.</p>
-      <ul class="project-highlights">
-        <li>87% of customers prefer hybrid shopping — Sundays generate highest sales activity</li>
-        <li>Tier 3 cities identified as the leading segment for in-store visits</li>
-        <li>Automated reporting via pivot models — eliminated manual recalculation and improved monthly tracking</li>
-      </ul>
-      <div class="project-tags">
-        <span class="project-tag">Excel</span>
-        <span class="project-tag">Pivot Tables</span>
-        <span class="project-tag">Data Visualisation</span>
-        <span class="project-tag">Consumer Analytics</span>
-      </div>
-      <div class="project-links"></div>
-    </div>
+### 🔹 Loan Prediction — Binary Classification
+> Python · Scikit-learn · Pandas · SMOTE · Kaggle · 2026
 
-    <!-- PROJECT 5: Fast Food -->
-    <div class="project-card reveal">
-      <p class="project-year">2025 &nbsp;·&nbsp; Power BI</p>
-      <h3 class="project-name">Fast Food Sales Analysis</h3>
-      <p class="project-desc">Business intelligence dashboard synthesising 1,000+ orders worth ₹275K, revealing revenue patterns and upselling opportunities.</p>
-      <ul class="project-highlights">
-        <li>Identified mid-week revenue dip — targeted promotions estimated to lift sales by 10–15%</li>
-        <li>Beverages flagged as high-potential upsell category to improve average order value</li>
-        <li>Surfaced payment-method trends and weekday vs weekend performance gaps</li>
-      </ul>
-      <div class="project-tags">
-        <span class="project-tag">Power BI</span>
-        <span class="project-tag">Sales Analytics</span>
-        <span class="project-tag">Business Intelligence</span>
-      </div>
-      <div class="project-links"></div>
-    </div>
+- **78.9% accuracy** with Logistic Regression as top performer across 3 models
+- Applied SMOTE — improved minority-class recall by **~15%**
+- Identified **credit history** as the strongest loan approval predictor
 
-  </div>
-</section>
+---
 
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="section-header reveal">
-    <p class="section-tag">Professional Background</p>
-    <h2 class="section-title">Work Experience</h2>
-    <div class="divider"></div>
-  </div>
-  <div class="exp-list">
+### 🔹 Online vs Offline Shopping Behaviour
+> Excel · Pivot Tables · Data Visualisation · 2025–2026
 
-    <div class="exp-item reveal">
-      <div class="exp-period">Nov 2025 — May 2026<br><em style="font-style:normal;color:var(--ink-muted);">Kozhikode · Remote</em></div>
-      <div class="exp-content">
-        <h3>Data Analytics Intern</h3>
-        <p class="exp-company">Zoople Technologies</p>
-        <ul class="exp-points">
-          <li>Executed end-to-end analytics projects spanning database design, SQL querying, and interactive dashboard development across multiple business domains</li>
-          <li>Built 5+ interactive dashboards in Looker Studio, Tableau, and Excel — surfacing patterns in consumer behaviour, marketing performance, and revenue trends</li>
-          <li>Cleaned and analysed 10+ datasets using Python and SQL; applied SMOTE and feature engineering to improve ML model minority-class recall by 15%</li>
-          <li>Identified Beauty as the highest-margin category (51.6%) and UPI as dominant payment method (36%) — delivering actionable business recommendations</li>
-        </ul>
-      </div>
-    </div>
+- Analysed purchasing behaviour of **11,789+ customers** across demographics
+- **87% prefer hybrid shopping** — Sundays generate highest sales; Tier 3 cities lead in-store visits
+- Automated monthly reporting via pivot models — eliminated manual recalculation
 
-    <div class="exp-item reveal">
-      <div class="exp-period">Mar 2025 — Sep 2025<br><em style="font-style:normal;color:var(--ink-muted);">Thamarassery, Kerala</em></div>
-      <div class="exp-content">
-        <h3>Accountant & Digital Marketer</h3>
-        <p class="exp-company">Appolos English School</p>
-        <ul class="exp-points">
-          <li>Streamlined monthly financial reporting — consolidated manual ledger entries into structured Excel models, reducing preparation time by 30%</li>
-          <li>Managed Excel-based payroll for 300+ staff; reconciled monthly statements and generated budget variance reports</li>
-          <li>Created and tracked 15+ monthly social media campaigns promoting 16 educational programs to a 100K+ audience</li>
-        </ul>
-      </div>
-    </div>
+---
 
-  </div>
-</section>
+### 🔹 Fast Food Sales Analysis
+> Power BI · Sales Analytics · 2025
 
-<!-- EDUCATION -->
-<section id="education">
-  <div class="section-header reveal">
-    <p class="section-tag">Academic Background</p>
-    <h2 class="section-title">Education & Certifications</h2>
-    <div class="divider"></div>
-  </div>
-  <div class="edu-grid reveal">
-    <div>
-      <div class="edu-item">
-        <p class="edu-degree">MSc. Data Science</p>
-        <p class="edu-school">Manipal Academy of Higher Education</p>
-        <p class="edu-year">Jul 2023 – Sep 2025 &nbsp;·&nbsp; Online</p>
-        <p style="font-size:0.78rem;color:var(--ink-muted);margin-top:0.4rem;">Python · R · SQL · Machine Learning · Statistics</p>
-      </div>
-      <div class="edu-item" style="margin-top:2rem;">
-        <p class="edu-degree">BSc. Mathematics</p>
-        <p class="edu-school">Malabar Christian College, Calicut</p>
-        <p class="edu-year">2020 – 2023</p>
-        <p style="font-size:0.78rem;color:var(--ink-muted);margin-top:0.4rem;">Quantitative Reasoning · Statistical Foundations</p>
-      </div>
-    </div>
-    <div>
-      <p class="section-tag" style="margin-bottom:1rem;">Certifications</p>
-      <ul class="cert-list">
-        <li class="cert-item">
-          <div class="cert-dot"></div>
-          <div><p class="cert-name">Data Analytics Internship Certificate</p><p class="cert-org">Zoople Technologies &nbsp;·&nbsp; 2025–2026</p></div>
-        </li>
-        <li class="cert-item">
-          <div class="cert-dot"></div>
-          <div><p class="cert-name">PGDIFA Course Certificate</p><p class="cert-org">APA &nbsp;·&nbsp; 2024</p></div>
-        </li>
-        <li class="cert-item">
-          <div class="cert-dot"></div>
-          <div><p class="cert-name">Certified Tally Certificate</p><p class="cert-org">Tally Education and Distribution Services Pvt. Ltd.</p></div>
-        </li>
-      </ul>
-      <div style="margin-top:2rem;">
-        <p class="section-tag" style="margin-bottom:1rem;">Languages</p>
-        <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
-          <span style="font-size:0.78rem;border:1px solid var(--cream-dark);padding:0.3rem 0.75rem;color:var(--ink-light);">English — Professional</span>
-          <span style="font-size:0.78rem;border:1px solid var(--cream-dark);padding:0.3rem 0.75rem;color:var(--ink-light);">Malayalam — Native</span>
-          <span style="font-size:0.78rem;border:1px solid var(--cream-dark);padding:0.3rem 0.75rem;color:var(--ink-light);">Hindi — Conversational</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+- Synthesised **1,000+ orders totalling ₹275K** in revenue
+- Identified mid-week revenue dip — promotions could lift sales by **10–15%**
+- Flagged beverages as high-potential upsell category
 
-<!-- CONTACT -->
-<section id="contact">
-  <p class="section-tag">Let's connect</p>
-  <h2 class="section-title">Open to Opportunities</h2>
-  <div class="divider"></div>
-  <p class="contact-subtitle">Actively seeking entry-level data analyst roles across India. Open to hybrid and remote positions.</p>
-  <div class="contact-links">
-    <a href="mailto:sainabahanan123@gmail.com" class="contact-link">✉ sainabahanan123@gmail.com</a>
-    <a href="https://linkedin.com/in/sainaba-hanan-dataanalyst" class="contact-link" target="_blank">↗ LinkedIn</a>
-    <a href="https://github.com/sainaba-hanan" class="contact-link" target="_blank">↗ GitHub</a>
-    <a href="tel:+917034843403" class="contact-link">+91 70348-43403</a>
-  </div>
-</section>
+---
 
-<footer>
-  <span>© 2026 Sainaba Hanan</span>
-  <span>Kozhikode, Kerala &nbsp;·&nbsp; India</span>
-</footer>
+## 💼 Work Experience
 
-<script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
-</body>
-</html>
+**Data Analytics Intern** · Zoople Technologies *(Nov 2025 – May 2026 · Remote)*
+- Executed end-to-end analytics projects in SQL, Tableau, Looker Studio, Python, and Excel
+- Built 5+ interactive dashboards across marketing, e-commerce, and consumer behaviour domains
+- Applied SMOTE and feature engineering to improve ML model minority-class recall by **15%**
+
+**Accountant & Digital Marketer** · Appolos English School *(Mar 2025 – Sep 2025)*
+- Streamlined monthly reporting — reduced preparation time by **30%**
+- Managed payroll for **300+ staff**; ran **15+ campaigns** reaching a **100K+ audience**
+
+---
+
+## 🎓 Education
+
+| Degree | Institution | Year |
+|--------|-------------|------|
+| MSc. Data Science | Manipal Academy of Higher Education (Online) | 2023–2025 |
+| BSc. Mathematics | Malabar Christian College, Calicut | 2020–2023 |
+
+**Certifications:** Data Analytics — Zoople (2025–2026) · PGDIFA — APA (2024) · Certified Tally
+
+---
+
+## 📊 GitHub Stats
+
+![Sainaba's GitHub Stats](https://github-readme-stats.vercel.app/api?username=sainaba-hanan&show_icons=true&theme=graywhite&hide_border=true&title_color=c4a96b&icon_color=c4a96b)
+
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=sainaba-hanan&layout=compact&theme=graywhite&hide_border=true&title_color=c4a96b)
+
+---
+
+## 📬 Let's Connect
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/sainaba-hanan-dataanalyst)
+[![Email](https://img.shields.io/badge/Email-D44638?style=flat&logo=gmail&logoColor=white)](mailto:sainabahanan123@gmail.com)
+[![Portfolio](https://img.shields.io/badge/Portfolio-1a1814?style=flat&logo=githubpages&logoColor=white)](https://sainaba-hanan.github.io)
+
+---
+
+*Actively seeking entry-level Data Analyst roles across India — open to hybrid and remote positions.*
